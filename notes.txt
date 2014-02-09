@@ -5,3 +5,6 @@ curl --data "param1=value1&param2=value2" http://example.com/resource.cgi
 ou
 
 curl --form "fileupload=@filename.txt" http://example.com/resource.cgi
+
+
+http://fragments.turtlemeat.com/pythonwebserver.php      webserv less than 30mn :p
