@@ -8,7 +8,7 @@ port = 8000
 class ThreadingCGIServer(SocketServer.ThreadingMixIn, BaseHTTPServer.HTTPServer):
     pass
 server = ThreadingCGIServer(('', port), CGIHTTPServer.CGIHTTPRequestHandler)
-print "Serveur demarre sur le port %s." % port
+print "Serveur demarre sur le port %s" % port
 try:
     while 1:
         sys.stdout.flush()
