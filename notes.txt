@@ -8,3 +8,13 @@ curl --form "fileupload=@filename.txt" http://example.com/resource.cgi
 
 
 http://fragments.turtlemeat.com/pythonwebserver.php      webserv less than 30mn :p
+
+
+
+voila une petite explication sympa des servs en C++:
+
+
+http://khayyam.developpez.com/articles/cpp/multithreads/
+
+P.S: un vieux liens mais je crois que ca a pas bouger bcp depuis le temps;
+P.S2: tout en bas de la page il y a les 3 fichiers (main.cpp, serveur.cpp et serveur.h)
