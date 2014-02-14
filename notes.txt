@@ -18,3 +18,8 @@ http://khayyam.developpez.com/articles/cpp/multithreads/
 
 P.S: un vieux liens mais je crois que ca a pas bouger bcp depuis le temps;
 P.S2: tout en bas de la page il y a les 3 fichiers (main.cpp, serveur.cpp et serveur.h)
+
+
+voila un autre lien pour le serv C++( en anglais et un peu plus recent):
+
+http://codebase.eu/tutorial/linux-socket-programming-c/#connecting_to_server
