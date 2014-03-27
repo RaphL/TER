@@ -1,0 +1,20 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<?xml-stylesheet href="qcm.xsl" type="text/xsl" ?>
+<qcm matiere ="champignons">
+
+	<question>
+		<libelle> Parmi ces amanites, quelle est celle qui est comestible ? </libelle>
+		<choix score ="-5">l'amanite phaloïde. </choix> 
+		<choix score ="-2">l'amanite tue-mouche. </choix>
+		<choix score ="5">l'amanite des Césars. </choix>
+	</question>
+
+	<question>
+		<libelle> Parmi ces bolets, quel est celui qui est toxique ? </libelle>
+		<choix score ="-5">le bolet de pins. </choix>
+		<choix score ="5">le bolet de satan. </choix>
+		<choix score ="1">le bolet de blafard. </choix>
+		<choix score ="-5">le bolet de Bordeaux. </choix>
+	</question>
+
+</qcm>
