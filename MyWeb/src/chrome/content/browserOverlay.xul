@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/css" href="chrome://global/skin/" ?>
+<?xml-stylesheet type="text/css"
+  href="chrome://myweb/skin/browserOverlay.css" ?>
+
+<!DOCTYPE overlay SYSTEM
+  "chrome://myweb/locale/browserOverlay.dtd">
+
+<overlay id="myweb-browser-overlay"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+
+  <script type="application/x-javascript"
+    src="chrome://myweb/content/browserOverlay.js" />
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="myweb-string-bundle"
+      src="chrome://myweb/locale/browserOverlay.properties" />
+  </stringbundleset>
+
+  <menupopup id="menu_ToolsPopup">
+    <menu id="myweb-hello-menu" label="&myweb.hello.label;"
+      accesskey="&myweb.helloMenu.accesskey;"
+      insertbefore="devToolsEndSeparator">
+      <menupopup>
+        <menuitem id="myweb-hello-menu-item"
+          label="&myweb.hello.label;"
+          accesskey="&myweb.helloItem.accesskey;"
+          oncommand="MyWebChrome.BrowserOverlay.sayHello(event);" />
+      </menupopup>
+    </menu>
+  </menupopup>
+  
+  <vbox id="appmenuSecondaryPane">
+    <menu id="myweb-hello-menu-2" label="&myweb.hello.label;"
+      accesskey="&myweb.helloMenu.accesskey;"
+      insertafter="appmenu_addons">
+      <menupopup>
+        <menuitem id="myweb-hello-menu-item-2"
+          label="&myweb.hello.label;"
+          accesskey="&myweb.helloItem.accesskey;"
+          oncommand="MyWebChrome.BrowserOverlay.sayHello(event);" />
+      </menupopup>
+    </menu>
+  </vbox>
+</overlay>

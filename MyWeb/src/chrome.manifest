@@ -1,0 +1,6 @@
+content   myweb                jar:chrome/myweb.jar!/content/
+skin      myweb  classic/1.0   jar:chrome/myweb.jar!/skin/
+locale    myweb  en-US         jar:chrome/myweb.jar!/locale/en-US/
+resource  myweb                modules/
+
+overlay chrome://browser/content/browser.xul  chrome://myweb/content/browserOverlay.xul
