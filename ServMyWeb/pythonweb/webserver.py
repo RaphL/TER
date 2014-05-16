@@ -10,20 +10,20 @@ from StringIO import StringIO
 class MyHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         try:
-            #formulaire=cgi.FieldStorage()
-            #print "informations recues du service web [prenom=%s,nom=%s,age=%s]" % (formulaire.getlist("prenom"),formulaire.getlist("nom"),formulaire.getlist("age")) 
-            #print "info : requete=%s" % (formulaire.getlist("myweb"))
-            #envoi de reponse
-            #message_parts = [
-            #    'ye swi un serveur MyWeb'
-            #    ]
-            #message = '\r\n'.join(message_parts)
-            #self.send_response(200)
-            #self.end_headers()
-            #self.wfile.write(message)
-            #return
+			"""formulaire=cgi.FieldStorage()
+            print "informations recues du service web [prenom=%s,nom=%s,age=%s]" % (formulaire.getlist("prenom"),formulaire.getlist("nom"),formulaire.getlist("age")) 
+            print "info : requete=%s" % (formulaire.getlist("myweb"))
+            envoi de reponse
+            message_parts = [
+                'ye swi un serveur MyWeb'
+                ]
+            message = '\r\n'.join(message_parts)
+            self.send_response(200)
+            self.end_headers()
+            self.wfile.write(message)
+            return"""
             if self.path == "/index.html":
-                print "test"
+                print 'test'
             if self.path.endswith(".test"):
                 
                 f1 = open(curdir + sep + self.path)

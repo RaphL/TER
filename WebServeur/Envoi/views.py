@@ -11,6 +11,9 @@ def home(request):
 	return HttpResponse(text)
 	
 	
+def Hello(request):
+	return render(request, 'Envoi/hello.html', {'current_date': datetime.now()})
+	
 def traitement(request, fichier):
 	
 	response = HttpResponse(mimetype = 'application/force-download')
@@ -22,14 +25,17 @@ def traitement(request, fichier):
 
 
 def ajout_template(request, fichier, template):
-	if(template == false):
-		response = HttpReponse(mimetype = 'application/force-download')
+	print("hello world!")
+	if(template == 'false'):
+		response = HttpResponse(mimetype = 'application/force-download')
 		response['Content-Disposition'] = 'attachement; filename=%s' % smart_str(fichier)
-		response['X-sendfile'] = smart_str(u"C:\\Users\\VIktor\\Documents\\GitHub\\TER\\WebServeur\\asset\\"+fichier,encoding='utf-8')
+		#response['X-sendfile'] = smart_str(u"C:\\Users\\VIktor\\Documents\\GitHub\\TER\\WebServeur\\asset\\"+fichier,encoding='utf-8')
 		response['X-sendfile'] = smart_str(u"C:\\Users\\VIktor\\Documents\\GitHub\\TER\\WebServeur\\asset\\tempalte\\"+fichier[0:-4]+'.myWeb',encoding='utf-8')
 		
-		return response
+		
 	else:
+		response = HttpResponse(mimetype = 'application/force-download')
 		response['Content-Disposition'] = 'attachement; filename=%s' % smart_str(fichier)
 		response['X-sendfile'] = smart_str(u"C:\\Users\\VIktor\\Documents\\GitHub\\TER\\WebServeur\\asset\\"+fichier,encoding='utf-8')
-		return response
+	
+	return response
