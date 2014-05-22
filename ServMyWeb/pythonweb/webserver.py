@@ -31,28 +31,40 @@ class MyHandler(BaseHTTPRequestHandler):
                 message = ""
                 for line in f1:
                     message=message+line+"</br>"
-                #self.send_response(200)
-                #self.send_header('Content-type',    'text/html')
-                #self.end_headers()
-                #self.wfile.write(message)
+                self.send_response(200)
+                self.send_header('Content-type',    'text/html')
+                self.end_headers()
+                self.wfile.write(message)
                 f1.close()
 
-                self.path, self.query_string=self.path.split("/test/",1)
+                #self.path, self.query_string=self.path.split("/test/",1)
                 #print curdir + sep + "test/template/"+self.query_string[0:-5]
-                f2 = open(curdir + sep + "test/template/"+self.query_string[0:-5]+".myweb")
+                #f2 = open(curdir + sep + "test/template/"+self.query_string[0:-5]+".myweb")
 
-                message2 = "$template$"+"</br>"
-                for line in f2:
-                    message2=message2+line+"</br>"
-                self.send_response(200)
+                #message2 = "$template$"+"</br>"
+                #for line in f2:
+                #    message2=message2+line+"</br>"
+                #self.send_response(200)
                 #self.send_header('Content-type',    'message')
                 #self.end_headers()
-                self.wfile.write(message+message2)
-                f2.close()
-
-
-
+                #self.wfile.write(message+message2)
+                #f2.close()
                 return
+            if re.search(r".*\.template",self.path):
+                if re.search(r".*test\/",self.path):
+                    f1 = open(curdir + sep + self.path)
+                    message = ""
+                for line in f1:
+                    message=message+line+"</br>"
+                self.send_response(200)
+                self.send_header('Content-type',    'text/html')
+                self.end_headers()
+                self.wfile.write(message)
+                f1.close()
+
+
+            if self.path == "/test/template/"
+            if self.path.endswith
 
 
                 #f = open(curdir + sep + self.path) #self.path has /test.html

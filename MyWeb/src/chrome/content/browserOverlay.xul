@@ -10,10 +10,9 @@
 <overlay id="myweb-browser-overlay"
   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-
   <script type="application/x-javascript"
     src="chrome://myweb/content/browserOverlay.js" />
-
+  
   <stringbundleset id="stringbundleset">
     <stringbundle id="myweb-string-bundle"
       src="chrome://myweb/locale/browserOverlay.properties" />
