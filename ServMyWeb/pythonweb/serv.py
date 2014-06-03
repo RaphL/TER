@@ -8,36 +8,36 @@ from StringIO import StringIO
 class MyHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         try:
-            if self.path.find('&template=false') != -1:
-                #print curdir + sep + "test/template/"+self.query_string[0:-5]
-                vide, path=self.path.split('/',1)
-                nom, rq=path.split('&',1)
-                nomf, ext=nom.split('.',1)
-                #print "nomf :"+nomf+ "\next :"+ext
-                #print "nom :"+nom +"\nrq :"+rq
-                #print "vide :"+vide+"\npath :"+path
-                chemin=curdir + sep + ext +"/template"+ sep + nomf + ".myweb"
+            if re.search('/myweb/[a-zA-Z0-9\.\-\_]+\.json\&template=false', self.path) != None:
+                print "template"+self.path
+                vide, route=self.path.split('/',1)
+                myweb, nom=route.split('/',1)
+                nomf, exttemp=nom.split('.',1)
+                ext, temp=exttemp.split('&',1)
+                print "nomf :"+nomf+ "\next :"+ext
+                print "nom :"+nom +"\nmyweb :"+myweb
+                print "vide :"+vide+"\nexttemp :"+exttemp
+                chemin=curdir + sep + ext +"/template"+ sep + nomf + ".template"
                 print "chemin :"+chemin
-                f1 = open(chemin)#need securite
+                f1 = open(chemin)
                 message = ""
                 for line in f1:
-                    message=message+line+"</br>"
+                    message=message+line
                 self.send_response(200)
                 self.send_header('Content-type',    'text/html')
                 self.end_headers()
                 self.wfile.write(message)
                 f1.close()
                 return
-            if self.path.endswith(".test"):
-                vide, nom=self.path.split('/',1)
+            if re.search('/myweb/[a-zA-Z0-9\.\-\_]+\.json', self.path) != None:
+                print "data"+self.path
+                vide, route=self.path.split('/',1)
+                myweb, nom=route.split('/',1)
                 nomf, ext=nom.split('.',1)
-                print "nomf :"+nomf
-                print "ext :"+ext
-                f1 = open(curdir + sep + "test/" + nomf + "."+ ext)#need securite
-                message = "<body>"
+                f1 = open(curdir + sep + "json/" + nomf + "."+ ext)
+                message = ""
                 for line in f1:
-                    message=message+line+"</br>"
-                message=message +"</body>"
+                    message=message+line
                 self.send_response(200)
                 self.send_header('Content-type',    'text/html')
                 self.end_headers()
